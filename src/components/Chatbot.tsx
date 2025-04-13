@@ -244,10 +244,13 @@ const Chatbot: React.FC = () => {
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-5 pointer-events-none"
         }`}
-        style={{ minWidth: "280px", maxHeight: "calc(100vh - 80px)" }}
+        style={{
+          minWidth: "280px",
+          maxHeight: "calc(100vh - 80px)", // Set max height for entire container
+        }}
       >
-        {/* Chat header */}
-        <div className="bg-blue-600 text-white p-2 flex justify-between items-center">
+        {/* Chat header - make it sticky */}
+        <div className="bg-blue-600 text-white p-2 flex justify-between items-center sticky top-0 z-10">
           <div className="font-semibold flex items-center gap-1 text-sm">
             <svg
               className="w-4 h-4 fill-white"
@@ -270,11 +273,11 @@ const Chatbot: React.FC = () => {
           </button>
         </div>
 
-        {/* Chat body */}
+        {/* Chat body - adjust max height */}
         <div
           ref={chatBodyRef}
           className="flex-1 p-3 overflow-y-auto flex flex-col"
-          style={{ maxHeight: "calc(100vh - 140px)" }}
+          style={{ height: "auto" }} // Let it grow naturally within the container
         >
           {messages.map((message, index) => (
             <div
@@ -323,8 +326,8 @@ const Chatbot: React.FC = () => {
             )}
         </div>
 
-        {/* Chat footer */}
-        <div className="p-2 border-t border-slate-200 flex gap-1">
+        {/* Chat footer - make it sticky */}
+        <div className="p-2 border-t border-slate-200 flex gap-1 sticky bottom-0 bg-white z-10">
           <input
             type="text"
             value={input}
