@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 //import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BprogressProvider from "@/lib/BprogressProvider";
+import Navbar from "@/components/landing/Navbar";
 
 /* const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased flex flex-col justify-center items-center min-h-screen w-full font-trebuchetMs bg-[#F5F5F5]">
         <BprogressProvider>
+          <Navbar />
           <main className="flex-grow h-full w-full max-w-[1440px] bg-white text-black">
             {children}
           </main>
