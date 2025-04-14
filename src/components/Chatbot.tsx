@@ -239,21 +239,20 @@ const Chatbot: React.FC = () => {
 
       {/* Chat dialog box */}
       <div
-        className={`absolute bottom-14 right-0 w-full max-w-xs sm:max-w-sm bg-white rounded-lg shadow-xl flex flex-col overflow-hidden transition-all duration-300 ${
+        className={`absolute bottom-14 right-0 w-[280px] sm:w-[350px] bg-white rounded-lg shadow-xl flex flex-col overflow-hidden transition-all duration-300 ${
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-5 pointer-events-none"
         }`}
         style={{
-          minWidth: "280px",
           maxHeight: "calc(100vh - 80px)", // Set max height for entire container
         }}
       >
         {/* Chat header - make it sticky */}
-        <div className="bg-blue-600 text-white p-2 flex justify-between items-center sticky top-0 z-10">
-          <div className="font-semibold flex items-center gap-1 text-sm">
+        <div className="bg-blue-600 text-white p-2 sm:p-3 flex justify-between items-center sticky top-0 z-10">
+          <div className="font-semibold flex items-center gap-1 text-sm sm:text-base">
             <svg
-              className="w-4 h-4 fill-white"
+              className="w-4 h-4 sm:w-5 sm:h-5 fill-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -266,7 +265,7 @@ const Chatbot: React.FC = () => {
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-white text-xl p-1"
+            className="text-white text-xl sm:text-2xl p-1"
             aria-label="Close chat"
           >
             ×
@@ -276,13 +275,13 @@ const Chatbot: React.FC = () => {
         {/* Chat body - adjust max height */}
         <div
           ref={chatBodyRef}
-          className="flex-1 p-3 overflow-y-auto flex flex-col"
+          className="flex-1 p-3 sm:p-4 overflow-y-auto flex flex-col"
           style={{ height: "auto" }} // Let it grow naturally within the container
         >
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`mb-2 max-w-[85%] p-2 rounded-lg text-sm animate-fadeIn ${
+              className={`mb-2 max-w-[85%] p-2 sm:p-3 rounded-lg text-sm sm:text-base animate-fadeIn ${
                 message.isUser
                   ? "bg-blue-600 text-white self-end rounded-br-none"
                   : "bg-slate-100 self-start rounded-bl-none"
@@ -297,9 +296,9 @@ const Chatbot: React.FC = () => {
           {/* Typing indicator */}
           {isTyping && (
             <div className="flex gap-1 p-2 bg-slate-100 rounded-lg w-fit mb-2 self-start">
-              <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce"></div>
-              <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce delay-100"></div>
-              <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce delay-200"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-slate-400 rounded-full animate-bounce"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-slate-400 rounded-full animate-bounce delay-100"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-slate-400 rounded-full animate-bounce delay-200"></div>
             </div>
           )}
 
@@ -317,7 +316,7 @@ const Chatbot: React.FC = () => {
                   <button
                     key={link}
                     onClick={() => handleQuickLinkClick(link)}
-                    className="bg-blue-100 text-blue-600 px-2 py-1 text-xs rounded-full hover:bg-blue-200 transition-colors mb-1"
+                    className="bg-blue-100 text-blue-600 px-2 py-1 text-xs sm:text-sm rounded-full hover:bg-blue-200 transition-colors mb-1"
                   >
                     {link}
                   </button>
@@ -327,22 +326,22 @@ const Chatbot: React.FC = () => {
         </div>
 
         {/* Chat footer - make it sticky */}
-        <div className="p-2 border-t border-slate-200 flex gap-1 sticky bottom-0 bg-white z-10">
+        <div className="p-2 sm:p-3 border-t border-slate-200 flex gap-1 sm:gap-2 sticky bottom-0 bg-white z-10">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
             placeholder="Type your question..."
-            className="flex-1 px-2 py-1.5 border border-slate-200 rounded focus:outline-none focus:border-blue-600 text-sm"
+            className="flex-1 px-2 py-1.5 sm:px-3 sm:py-2 border border-slate-200 rounded focus:outline-none focus:border-blue-600 text-sm sm:text-base"
           />
           <button
             onClick={handleSendMessage}
-            className="bg-blue-600 text-white px-2 rounded hover:bg-blue-700 transition-colors"
+            className="bg-blue-600 text-white px-2 sm:px-3 rounded hover:bg-blue-700 transition-colors"
             aria-label="Send message"
           >
             <svg
-              className="w-4 h-4 fill-white"
+              className="w-4 h-4 sm:w-5 sm:h-5 fill-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
