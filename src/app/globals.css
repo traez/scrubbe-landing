@@ -113,6 +113,33 @@ body {
 }
 
 /* 
+ Banner.tsx animation CSS styles
+*/
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-15px); 
+  }
+}
+
+.animate-float {
+  animation: float 5s infinite ease-in-out;
+}
+
+.animate-float-delay-2s {
+  animation: float 5s infinite ease-in-out;
+  animation-delay: 2s;
+}
+
+.animate-float-delay-3-5s {
+  animation: float 5s infinite ease-in-out;
+  animation-delay: 3.5s;
+}
+
+/* 
 ---break---
 */
 

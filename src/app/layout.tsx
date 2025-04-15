@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import BprogressProvider from "@/lib/BprogressProvider";
 import Navbar from "@/components/landing/Navbar";
+import Chatbot from "@/components/landing/Chatbot";
 import CookieConsentModal from "@/components/landing/CookieConsentModal";
 import AnnouncementBar from "@/components/landing/AnnouncementBar";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             {children}
           </main>
           <CookieConsentModal />
+          <Chatbot />
         </BprogressProvider>
       </body>
     </html>
