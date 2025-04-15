@@ -1,4 +1,58 @@
+"use client";
+import { useState, useEffect, useRef, useMemo } from "react";
+
 function Advanced() {
+  // Use useMemo to prevent recreation of the words array on each render
+  const words = useMemo(() => ["Intelligence", "Features", "in Action"], []);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [visibleLetters, setVisibleLetters] = useState(0);
+  // Fix: Properly type the refs to handle NodeJS.Timeout
+  const intervalRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const animationRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  // Function to handle word rotation
+  useEffect(() => {
+    // Clear any existing intervals when component mounts or unmounts
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (animationRef.current) clearTimeout(animationRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Start the word rotation when component mounts
+    intervalRef.current = setInterval(() => {
+      // Reset visible letters to 0
+      setVisibleLetters(0);
+
+      // Change to the next word
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 5000); // 5 seconds rotation
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [words.length]);
+
+  // Letter animation effect
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
+
+    if (visibleLetters < currentWord.length) {
+      animationRef.current = setTimeout(() => {
+        setVisibleLetters((prevCount) => prevCount + 1);
+      }, 100); // 100ms per letter
+    }
+
+    return () => {
+      if (animationRef.current) clearTimeout(animationRef.current);
+    };
+  }, [currentWordIndex, visibleLetters, words]);
+
+  // Get the current word and split it for animation
+  const currentWord = words[currentWordIndex];
+  const visiblePart = currentWord.substring(0, visibleLetters);
+
   return (
     <div className="h-auto bg-gradient-to-br from-[#1a237e] to-[#283593] flex items-center justify-center p-4">
       <div className="w-full min-w-[280px] max-w-[720px] max-h-[450px] mx-auto overflow-hidden">
@@ -12,7 +66,7 @@ function Advanced() {
               </span>{" "}
               <span className="text-white">Security</span>
               <br />
-              <span className="text-white">Intelligence</span>
+              <span className="text-white">{visiblePart}</span>
             </h1>
 
             <p className="text-gray-300 text-base md:text-lg mb-4 md:mb-6 text-left">

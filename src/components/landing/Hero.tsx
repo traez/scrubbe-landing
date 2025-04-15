@@ -1,6 +1,5 @@
 import Banner from "@/components/landing/Banner";
 import Advanced from "@/components/landing/Advanced";
-//import Space from "@/components/landing/Space";
 
 const Hero = () => {
   return (
