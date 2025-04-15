@@ -78,7 +78,7 @@ body {
   }
 }
 
-/* Apply the animations using Tailwind's arbitrary value syntax */
+/* Apply the animations using Tailwind's arbitrary value syntax for chatbot */
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -93,6 +93,23 @@ body {
 
 .delay-200 {
   animation-delay: 0.4s;
+}
+
+/* 
+ CookieConsentModal CSS styles
+*/
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s forwards;
+  animation-delay: 1s;
 }
 
 /* 

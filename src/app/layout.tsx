@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import BprogressProvider from "@/lib/BprogressProvider";
 import Navbar from "@/components/landing/Navbar";
+import CookieConsentModal from "@/components/landing/CookieConsentModal";
 
 /* const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <main className="flex-grow h-full w-full max-w-[1440px] bg-white text-black">
             {children}
           </main>
+          <CookieConsentModal />
         </BprogressProvider>
       </body>
     </html>
