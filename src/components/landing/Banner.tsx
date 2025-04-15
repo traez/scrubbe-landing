@@ -1,6 +1,6 @@
 const Banner: React.FC = () => {
   return (
-    <section className="relative overflow-hidden max-w-[950px] min-w-[280px] mx-auto my-8 px-4 sm:px-10">
+    <section className="relative overflow-hidden w-full min-w-[280px] mx-auto my-8 px-4">
       {/* Dashboard Preview */}
       <div className="relative z-10 rounded-lg shadow-2xl overflow-hidden bg-[#0f172a] border border-white/10 h-[400px]">
         {/* Dashboard Header */}
