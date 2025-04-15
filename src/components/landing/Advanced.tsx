@@ -66,7 +66,14 @@ function Advanced() {
               </span>{" "}
               <span className="text-white">Security</span>
               <br />
-              <span className="text-white">{visiblePart}</span>
+              <span
+                className="text-white inline-block"
+                style={{
+                  minHeight: "1.2em", // Ensures height is maintained
+                }}
+              >
+                {visiblePart || "\u00A0"} {/* Non-breaking space if empty */}
+              </span>
             </h1>
 
             <p className="text-gray-300 text-base md:text-lg mb-4 md:mb-6 text-left">
