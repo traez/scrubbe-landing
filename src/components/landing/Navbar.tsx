@@ -93,7 +93,7 @@ const Navbar = () => {
     <>
       {/* Navbar Container */}
       <nav
-        className={`flex ${textColor} h-16 w-full justify-between items-center px-4 md:px-6 lg:px-16 xl:px-32 sticky top-0 z-50 bg-white shadow-sm`}
+        className={`flex ${textColor} h-16 w-full max-w-[1440px] justify-between items-center px-4 md:px-6 lg:px-16 xl:px-32 sticky top-0 z-50 bg-white shadow-sm`}
       >
         {/* Logo */}
         <Link
