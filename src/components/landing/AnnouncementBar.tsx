@@ -23,27 +23,28 @@ const AnnouncementBar = () => {
   };
 
   return (
-    <div
+    <section
       className={`
-        fixed top-0 left-0 right-0 z-50 
-        bg-blue-600 text-white px-4 py-3
-        flex items-center justify-between
-        transform transition-transform duration-500 ease-in-out
-        ${isVisible ? "translate-y-0" : "-translate-y-full"}
-      `}
+    fixed top-0 left-0 z-50 w-full 
+    bg-blue-600 text-white 
+    transform transition-transform duration-500 ease-in-out
+    ${isVisible ? "translate-y-0" : "-translate-y-full"}
+  `}
     >
-      <p className="text-center flex-grow font-medium">
-        🛡️ New: Enhanced threat detection features now available! Schedule a
-        demo today.
-      </p>
-      <button
-        onClick={handleDismiss}
-        className="ml-4 p-1 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white"
-        aria-label="Close announcement"
-      >
-        <X size={20} />
-      </button>
-    </div>
+      <nav className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-4 py-3">
+        <p className="text-center flex-grow font-medium">
+          🛡️ New: Enhanced threat detection features now available! Schedule a
+          demo today.
+        </p>
+        <button
+          onClick={handleDismiss}
+          className="ml-4 p-1 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Close announcement"
+        >
+          <X size={20} />
+        </button>
+      </nav>
+    </section>
   );
 };
 

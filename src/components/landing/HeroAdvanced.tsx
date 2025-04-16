@@ -82,10 +82,10 @@ function HeroAdvanced() {
               threats.
             </p>
           </div>
-
+        {/*   bg-blue-600 */}
           <div className="flex flex-col gap-6">
             <div className="flex flex-row gap-3 justify-start">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 md:px-6 rounded-md transition-colors text-sm">
+              <button className="bg-scblue hover:bg-blue-700 text-white font-semibold py-2 px-4 md:px-6 rounded-md transition-colors text-sm">
                 Start free trial
               </button>
               <button className="border-2 border-white text-white hover:bg-white/10 font-semibold py-2 px-4 md:px-6 rounded-md transition-colors text-sm">

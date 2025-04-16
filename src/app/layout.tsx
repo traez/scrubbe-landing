@@ -30,11 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased flex flex-col justify-center items-center min-h-screen w-full font-trebuchetMs bg-[#F5F5F5]">
+      <body className="antialiased flex flex-col justify-center items-center min-h-screen w-full font-trebuchetMs">
         <BprogressProvider>
           <Navbar />
           <AnnouncementBar />
-          <main className="flex-grow h-full w-full max-w-[1440px] bg-white text-black">
+          <main className="flex-grow h-full w-full">
             {children}
           </main>
           <CookieConsentModal />

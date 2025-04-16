@@ -79,7 +79,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
               onClick={onClose}
               className="p-2 mr-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <IoMdClose size={18} className="sm:size-20" />
+              <IoMdClose size={18} className="sm:size-10" />
             </button>
           </div>
         </form>
