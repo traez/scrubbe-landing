@@ -1,4 +1,4 @@
-const Banner: React.FC = () => {
+const HeroBanner: React.FC = () => {
   return (
     <section className="relative overflow-hidden w-full min-w-[280px] mx-auto my-8 px-4">
       {/* Dashboard Preview */}
@@ -123,4 +123,4 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default HeroBanner;

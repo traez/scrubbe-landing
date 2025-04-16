@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useMemo } from "react";
 
-function Advanced() {
+function HeroAdvanced() {
   // Use useMemo to prevent recreation of the words array on each render
   const words = useMemo(() => ["Intelligence", "Features", "in Action"], []);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -116,4 +116,4 @@ function Advanced() {
   );
 }
 
-export default Advanced;
+export default HeroAdvanced;
