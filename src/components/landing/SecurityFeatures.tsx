@@ -19,10 +19,9 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, title, description }) => {
   return (
-    <div className="h-full px-4 pb-4">
-      <div className="flex flex-col items-start text-left h-full">
+    <div className="h-full px-4 pb-4 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg rounded-xl bg-white">
+      <div className="flex flex-col items-start text-left h-full ">
         <div className="w-full border-b-[2px] border-scblue my-2">
-          {/* Icon stays small and left-aligned */}
           <div className="text-scblue text-4xl inline-block">{icon}</div>
         </div>
         <h3 className="text-scblue text-2xl font-bold mb-4">{title}</h3>
