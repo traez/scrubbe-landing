@@ -58,7 +58,11 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
   return (
     <section className="fixed inset-0 z-50 flex items-start justify-center">
       {/* Very light gray, almost transparent overlay */}
-      <div className="absolute inset-0 bg-black/50" onClick={onClose}></div>
+
+      <div
+        className="absolute inset-0 backdrop-blur-md bg-black/40"
+        onClick={onClose}
+      ></div>
 
       {/* Modal container - now with responsive width */}
       <article className="relative w-[280px] sm:w-[480px] md:w-full md:max-w-2xl mt-8 sm:mt-16 md:mt-24 mx-4 bg-white rounded-lg shadow-lg animate-fadeIn">
@@ -77,9 +81,9 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 mr-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 mr-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
             >
-              <IoMdClose size={18} className="sm:size-10" />
+              <IoMdClose size={18} />
             </button>
           </div>
         </form>
